@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>Experiment 7</title>
+    <script>
+        function openwin() {
+            mywindow = window.open("", "childWindow", "width=500,height=300");
+            mywindow.document.write("<style>body { text-align: center; background-color:aqua; }</style>");
+            mywindow.document.write("<h1>Form Successfully Submitted!</h1>");
+            mywindow.document.write("<h2>Name: " + txt1.value + " " + txt2.value + "</h2>");
+            mywindow.document.write("<h2>Contact Info: " + txt3.value + "</h2>");
+            mywindow.document.write("<input type='button' value='Close window' onclick='window.close()'>");
+        }
+    </script>
+</head>
+
+<body style="text-align: center; background-color: beige;">
+    <form onsubmit="openwin()">
+        <h1>Enter Details: </h1><br><br>
+        Enter first name: <input type="text" id="txt1" required><br><br>
+        Enter last name: <input type="text" id="txt2" required><br><br>
+        Enter phone number: <input type="tel" id="txt3" required><br><br><br>
+        <input type="submit"></input>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>XHR JSON</title>
+    <style>
+        .note {
+            width: 4em;
+            height: 4em;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", "employee.json", true);
+        xhr.responseType = "json";
+        xhr.onload = function () {
+            var res = xhr.response;
+            for (ctr = 0; ctr < res.length; ctr++) {
+                var line1 = document.createElement("p");
+                var line2 = document.createElement("p");
+                var line3 = document.createElement("img");
+
+                line1.innerHTML = "First Name: " + res[ctr].empname;
+                line2.innerHTML = "Last Name: " + res[ctr].lastname;
+                line3.setAttribute("src", res[ctr].empPhoto);
+                line3.setAttribute("class", "note");
+
+                document.getElementById("d1").appendChild(line1);
+                document.getElementById("d1").appendChild(line2);
+                document.getElementById("d1").appendChild(line3);
+            }
+        }
+        function xhrjson() {
+            xhr.send();
+        }
+    </script>
+    <input type="button" value="Retrieve JSON" onclick="xhrjson();">
+    <hr>
+    <div id="d1" style="color:red;font-size:2em;"></div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Shopping Cart</title>
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            var arr = ["mobile", "laptop", "charger", "headphones"];
+            for (ctr = 0; ctr < arr.length; ctr++) {
+                var x = document.createElement("option");
+                x.innerHTML = arr[ctr];
+                document.getElementById("products").appendChild(x);
+            }
+        }
+        function addCart() {
+            var data = products.value;
+            var x = document.createElement("option");
+            x.innerHTML = data;
+            document.getElementById("cart").appendChild(x);
+        }
+    </script>
+    <select id="products">
+
+    </select>
+    <input type="button" value="Add to Cart" onclick="addCart();">
+    <select id="cart">
+
+    </select>
+</body>
+
+</html>

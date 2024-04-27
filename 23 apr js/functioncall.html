@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Calling a function from another function</title>
+</head>
+
+<body>
+    <script>
+        function add(a, b, c) {
+            ans = a + b + c;
+            return ans;
+        }
+        function display() {
+            var arr2 = acceptdata();
+            var result = add(arr2[0], arr2[1], arr2[2]);
+            document.write("The answer is " + result);
+        }
+        function acceptdata() {
+            var x = parseInt(prompt("Enter the first number:"));
+            var y = parseInt(prompt("Enter the second number:"));
+            var z = parseInt(prompt("Enter the third number:"));
+            var arr1 = new Array();
+            arr1.push(x);
+            arr1.push(y);
+            arr1.push(z);
+            return arr1;
+        }
+    </script>
+    <input type="button" onclick="display();" value="FUNCTIONS!!!">
+</body>
+
+</html>

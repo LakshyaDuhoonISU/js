@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Ajax JSON Post</title>
+</head>
+
+<body>
+    <script>
+        function getData() {
+            const data = new FormData(form); // FormData is used to get the information from the form data
+            var a = data.get("txtproductname");
+            var b = data.get("txtprice");
+            var c = data.get("txtqty");
+            alert(a);
+            alert(b);
+            alert(c);
+            var obj = {};
+            obj.productName = a;
+            obj.price = b;
+            obj.qty = c;
+            str = JSON.stringify(obj); // converts JS object to JSON string
+            alert(str);
+            document.getElementById("d1").innerHTML = str;
+            function postjsondata() {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "blue.html", true);
+                xhr.setRequestHeader("content-type", "application/json"); // mime type
+                var jsonObject = JSON.parse(data);
+                alert(jsonObject);
+                xhr.send(jsonObject);
+                document.getElementById("d2").innerHTML = "Data submitted";
+            }
+        }
+    </script>
+    <form id="form">
+        <p>Product Id: <input type="text" name="txtproductname"></p>
+        <p>Price: <input type="text" name="txtprice"></p>
+        <p>Quantity: <input type="text" name="txtqty"></p>
+        <input type="button" value="check data" onclick="getData();">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" value="sending JSON string" onclick="postjsondata();">
+        <br>
+        <div id="d1" style="color:blue;font-size:2em;"></div>
+        <div id="d2" style="color:red;font-size:2em;"></div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<html>
+
+<body>
+    <script>
+        function fact() {
+            var a = prompt("Enter a number");
+            if (a == 0) {
+                alert(1);
+            }
+            else {
+                var ans = 1;
+                for (ctr = 1; ctr <= a; ctr++) {
+                    ans = ans * ctr;
+                }
+                alert(ans);
+            }
+        }
+        function square() {
+            var a = prompt("Enter a number");
+            var ans = a * a;
+            alert(ans);
+        }
+        function arithmeticOps() {
+            var a = parseInt(prompt("Enter a number"));
+            var b = parseInt(prompt("Enter a number"));
+            var c = prompt("Enter an operator");
+            switch (c) {
+                case "+":
+                    res = a + b;
+                    break;
+                case "-":
+                    res = a - b;
+                    break;
+                case "*":
+                    res = a * b;
+                    break;
+                case "/":
+                    if (b == 0) {
+                        alert("Error: Division by zero");
+                    }
+                    res = a / b;
+                    break;
+                case "%":
+                    res = a % b;
+                    break;
+                default:
+                    alert("Invalid operator");
+            }
+            alert(res);
+        }
+    </script>
+    <input type="button" value="Factorial" onclick="fact();">
+    <input type="button" value="Square" onclick="square();">
+    <input type="button" value="Arithmetic Operations" onclick="arithmeticOps();">
+</body>
+
+</html>

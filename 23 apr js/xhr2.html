@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>XHR Blob</title>
+</head>
+
+<body>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", "ian.jpg", true);
+        xhr.responseType = "blob";
+        xhr.onload = function (e) {
+            if (xhr.status == 200) {
+                var blob = xhr.response;
+                alert("sha hi" + blob);
+                var ig = document.createElement("img");
+                ig.src = window.URL.createObjectURL(blob);
+                alert("hi");
+                document.body.appendChild(ig);
+            }
+        }
+        xhr.send();
+    </script>
+</body>
+
+</html>
