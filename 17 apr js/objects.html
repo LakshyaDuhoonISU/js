@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>Objects in JavaScript</title>
+    <style>
+        input {
+            padding: 10px;
+            margin: 5px;
+            color: blue;
+            font-size: 2em;
+            font-style: oblique;
+        }
+    </style>
+</head>
+
+<body style="color:blue;font-size:2em;font-style:oblique;">
+    <script>
+        function example1() {
+            alert("Objects 1");
+            var mobileobj = {
+                model: "Real Me",
+                price: 8000,
+                camResolution: "48px"
+            }
+            alert(mobileobj.model);
+            mobileobj.model = "Jio";
+            alert(mobileobj["model"]);
+            alert(mobileobj.price);
+            alert(mobileobj["camResolution"]);
+        }
+        function example2() {
+            alert("Objects 2");
+            var obj = {
+                instrumentName: "Guitar",
+                price: 10000
+            }
+            alert(obj.instrumentName);
+            alert(obj["price"]); // another way of printing the value of a property of the object
+            obj.type = "acoustic"; // adding properties to the object
+            obj.material = "wood";
+            alert(obj.material); // printing the value of a property of the object
+            alert(obj.type);
+            delete obj.price; // deleting the property of the object
+            alert(obj.price); // prints undefined as property is not present
+        }
+        function example3() {
+            alert("Objects 3");
+            var objSong = {
+                songName: "Saregama",
+                songType: "Classical",
+                ragaName: "Tilang",
+            }
+            for (x in objSong) {
+                alert(x + " : " + objSong[x]); // prints the value of a property of the object
+            }
+        }
+        function example4() {
+            alert("Objects 4");
+            var laptops = [
+                {
+                    modelName: "HCL",
+                    price: 33000
+                },
+                {
+                    modelName: "HP",
+                    price: 43000
+                },
+                {
+                    modelName: "DELL",
+                    price: 23000
+                },
+                {
+                    modelName: "MacBook",
+                    price: 60000
+                }
+            ]
+            document.write("<hr>");
+            document.write(laptops); // prints the schema of the array
+            document.write("<hr>");
+            document.write(laptops[1]); // prints the schema of the second object in the array
+            document.write("<hr>");
+            document.write("The laptop details are as mentioned: <br>");
+            for (x in laptops) {
+                for (y in laptops[x]) { // prints the individual details of the laptops in the array
+                    document.write(y + " : " + laptops[x][y] + "<br>");
+                }
+                document.write("<hr>")
+            }
+        }
+    </script>
+    <input type="button" onclick="example1()" value="Object1"><br>
+    <input type="button" onclick="example2()" value="Object2"><br>
+    <input type="button" onclick="example3()" value="Object3"><br>
+    <input type="button" onclick="example4()" value="Object4"><br>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>Calculator</title>
+</head>
+
+<body style="text-align: center;background-color:rgb(248, 132, 0)">
+    <h1>Calculator</h1>
+    <input type="text" id="txt1" placeholder="first number" required>
+    <input type="text" id="txt2" placeholder="second number" required><br>
+    <br><input type="text" id="txt3" disabled placeholder="result"><br><br>
+    <input type="button" onclick="fun1()" value="+">
+    <input type="button" onclick="fun1()" value="-">
+    <input type="button" onclick="fun1()" value="*">
+    <input type="button" onclick="fun1()" value="%">
+    <input type="button" onclick="fun1()" value="/"><br><br>
+    <input type="reset" value="AC" onclick="txt1.value=null;txt2.value=null;txt3.value=null;"
+        style="background-color:rgb(238, 35, 35);text-transform: bold;">
+    <script>
+        function fun1() {
+            var n1 = parseInt(txt1.value);
+            var n2 = parseInt(txt2.value);
+            var res;
+            var btn = event.srcElement; // event.srcElement refers to the element that triggered the event(in this case the button which is clicked for the arithmetic operation)
+            var choice = btn.value;
+            switch (choice) {
+                case "+":
+                    res = n1 + n2;
+                    break;
+                case "-":
+                    res = n1 - n2;
+                    break;
+                case "*":
+                    res = n1 * n2;
+                    break;
+                case "/":
+                    if (n2 == 0) {
+                        alert("Error: Division by zero");
+                    }
+                    res = n1 / n2;
+                    break;
+                case "%":
+                    res = n1 % n2;
+                    break;
+                default:
+                    alert("Invalid operator");
+            }
+            txt3.value = res;
+        }
+    </script>
+</body>
+
+</html>

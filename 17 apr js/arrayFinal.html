@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title>Array Functions</title>
+    <style>
+        input {
+            margin: 15px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function arr1() {
+            alert("array method1");
+            arr1 = [12, true, "Mumbai", "Navi Mumbai", "Kharghar"];
+            alert(arr1.length);
+            var ctr = 0;
+            while (ctr < arr1.length) {
+                alert(arr1[ctr]);
+                ctr++;
+            }
+            ans = arr1.reverse(); // reverses the string
+            alert(ans.toString()); // converts an object(array in this case) to string
+            alert(ans[3]);
+        }
+        function arr2() {
+            alert("array method2");
+            var data = new Array(10);
+            document.write("<hr>");
+            data.push("Mumbai");
+            document.write("The length of the array is: " + data.length);
+            document.write("<hr>");
+            document.write(data.toString());
+            document.write("<hr>");
+            data.pop();
+            data.pop();
+            document.write("<hr>");
+            document.write("The array after pop");
+            document.write(data.toString());
+        }
+        function arr3() {
+            alert("array method3");
+            let arr2 = new Array();
+            arr2[0] = "Monday";
+            arr2[1] = "Tuesday";
+            arr2.push("Wednesday");
+            arr2.push("Thursday");
+            for (x in arr2) {
+                document.write("<p style='color:red;font-size:2em'>");
+                document.write(x + " : " + arr2[x]);
+                document.write("</p>");
+            }
+        }
+    </script>
+    <input type="button" onclick="arr1()" value="Array 1">
+    <br>
+    <input type="button" onclick="arr2()" value="Array 2">
+    <br>
+    <input type="button" onclick="arr3()" value="Array 3">
+    <br>
+</body>
+
+</html>

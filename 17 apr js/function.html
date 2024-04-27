@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>Functions in JavaScript</title>
+    <style>
+        input {
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function add() {
+            var a = 12;
+            var b = 34;
+            return (a + b);
+        }
+        function square(num) {
+            var ans = num * num;
+            document.write("<h1 style='color:green'>");
+            document.write("The square of " + num + " is " + ans);
+        }
+    </script>
+    <input type="button" onclick="var x=add();alert(x)" value="add"><br>
+    <input type="button" onclick="square(12)" value="square">
+</body>
+
+</html>

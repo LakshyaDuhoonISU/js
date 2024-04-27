@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title>Join Function</title>
+</head>
+
+<body>
+    <script>
+        var scripts = new Array(); // regular array
+        scripts[0] = "PHP";
+        scripts[1] = "ASP";
+        scripts[2] = "JavaScript";
+        scripts[3] = "HTML";
+        scripts[50] = "VbScript";
+        scripts.push("ShellScript");
+        document.write("<br>Length: " + scripts.length + "<hr>");
+        var str = scripts.join(" : "); // converts an array to a string by joining the elements with the specified value
+        document.write(str + "<br>");
+        document.write(scripts.join(" <br> "));
+    </script>
+</body>
+
+</html>
