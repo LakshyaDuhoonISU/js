@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>XHR</title>
+    <style>
+        #d1 {
+            color: red;
+            background-color: cyan;
+            font-size: 4em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>XMLHttpRequest Object</h1>
+    <script>
+        function ajax1() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("get", "http://127.0.0.1:5502/22%20apr%20js/ibm.txt", true); // opening a connection and getting the ibm.txt file with true being the async flag(if true, connection will be asynchronous[background])
+            xhr.onreadystatechange = function () {
+                alert(xhr.readyState);
+                if (xhr.status == 200 && xhr.readyState == 4) {
+                    alert("response received" + xhr.responseText);
+                    document.getElementById("d1").innerHTML = xhr.responseText;
+                }
+            }
+            xhr.send();
+        }
+    </script>
+    <div id="d1">
+
+    </div>
+    <input type="button" onclick="ajax1()">
+    <ol>
+        <li>Tim Berners Lee</li>
+        <li>Bill Gates</li>
+        <li>Elon Musk</li>
+        <li>Satya Nadella</li>
+    </ol>
+</body>
+
+</html>

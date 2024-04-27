@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Slideshow in JS</title>
+</head>
+
+<body>
+    <img class="slides"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtreGWV4E8pyCco35lisDbjhsOooTFB9Og6KwgnrT6g&s"
+        width="100%">
+    <img class="slides"
+        src="https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjU0NmJhdGNoMy1teW50LTM0LWJhZGdld2F0ZXJjb2xvcl8xLmpwZw.jpg"
+        width="100%">
+    <img class="slides"
+        src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
+        width="100%">
+    <script>
+        var slideIndex = 0;
+        function showSlides() {
+            var slides = document.getElementsByClassName("slides");
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 1000); // Change slide every 1 second
+        }
+        showSlides();
+    </script>
+</body>
+
+</html>

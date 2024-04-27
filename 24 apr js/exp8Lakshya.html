@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <title>Form Validation using Regex</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: aqua;
+        }
+
+        .center-block {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center-block">
+        <form>
+            <h1>Form Registration</h1>
+            Enter PAN Card Number: <input type="text" id="t1" required><span id="s1"></span><br><br>
+            Enter College Email Id: <input type="email" id="t2" required><span id="s2"></span><br><br>
+            Enter Phone Number: <input type="tel" id="t3" required><span id="s3"></span><br><br>
+            Enter OTP: <input type="number" id="t4" required><span id="s4"></span><br><br>
+            <input type="button" value="Submit Form" onclick="validate();">
+        </form>
+    </div>
+    <script>
+        function validate() {
+            var patt = /[A-Z]{5}[0-9]{4}[A-Z]{1}/g;
+            var pan = document.getElementById('t1').value;
+            if (patt.test(pan) && pan.length == 10) {
+                document.getElementById("s1").style.color = "green";
+                document.getElementById("s1").innerHTML = "Correct PAN number"
+            }
+            else {
+                document.getElementById("s1").style.color = "red";
+                document.getElementById("s1").innerHTML = "Incorrect PAN number"
+            }
+            var patt1 = /[0-9]{4}\.[A-Z]+@isu\.ac\.in/ig;
+            var email = document.getElementById('t2').value;
+            if (patt1.test(email)) {
+                document.getElementById("s2").style.color = "green";
+                document.getElementById("s2").innerHTML = "Correct Email Id"
+            }
+            else {
+                document.getElementById("s2").style.color = "red";
+                document.getElementById("s2").innerHTML = "Incorrect Email Id"
+            }
+            var patt2 = /[7-9]{1}[0-9]{9}/ig;
+            var phone = document.getElementById('t3').value;
+            if (patt2.test(phone) && phone.length == 10) {
+                document.getElementById("s3").style.color = "green";
+                document.getElementById("s3").innerHTML = "Correct Phone number";
+            }
+            else {
+                document.getElementById("s3").style.color = "red";
+                document.getElementById("s3").innerHTML = "Incorrect Phone number";
+            }
+            var patt3 = /[0-9]{4}/ig;
+            var otp = document.getElementById('t4').value;
+            if (patt3.test(otp) && otp.length == 4) {
+                document.getElementById("s4").style.color = "green";
+                document.getElementById("s4").innerHTML = "Correct OTP";
+            }
+            else {
+                document.getElementById("s4").style.color = "red";
+                document.getElementById("s4").innerHTML = "Incorrect OTP";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sending Form Data with AJAX</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        function sendData() {
+            var data = new FormData(document.getElementById('form'));
+            var obj = {};
+            data.forEach(function (value, key) {
+                obj[key] = value;
+            });
+            var str = JSON.stringify(obj);
+            localStorage.setItem('formData', str);
+            alert('Message sent successfully!');
+        }
+    </script>
+</head>
+
+<body>
+    <div id="d1">
+        <h1 style="color:green">Enter Your Message</h1>
+        <form onsubmit="event.preventDefault(); sendData();" id="form">
+            Name:
+            <input type="text" name="t1" required><br><br>
+            Username:
+            <input type="text" name="t2" required><br><br>
+            Message:
+            <textarea rows="5" cols="20" name="t3" required></textarea><br><br>
+            <input type="submit" value="Send Message" style="background-color: greenyellow;">
+        </form>
+    </div>
+</body>
+
+</html>

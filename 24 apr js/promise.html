@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Promise</title>
+</head>
+
+<body>
+    <script>
+        var p1 = new Promise(function (resolve, reject) {
+            var price = parseInt(prompt("Enter the price"));
+            if (price <= 15000)
+                resolve()
+            else
+                reject();
+        });
+        function resolve() {
+            return true;
+        }
+        function reject() {
+            return true;
+        }
+        p1.then(function () { alert("Purchase the mobile before diwali") })
+            .then(function () { alert("Gift it to your sister") }).then(function () { alert("Hello") })
+        p1.then(function () { alert("Bye") });
+        p1.catch(function () { alert("Do not purchase the mobile") })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        #message {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="message">
+        <!-- Messages will be displayed here -->
+    </div>
+
+    <script>
+        window.onload = function () {
+            var jsonData = JSON.parse(localStorage.getItem('formData'));
+            if (jsonData) {
+                var message = "Message: " + jsonData.t3;
+                document.getElementById("message").innerHTML = message;
+                localStorage.removeItem('formData'); // Clear local storage after displaying message
+            } else {
+                document.getElementById("message").innerHTML = "No messages received.";
+            }
+        };
+
+    </script>
+</body>
+
+</html>
