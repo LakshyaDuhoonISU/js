@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title>Skit</title>
+</head>
+
+<body>
+    <script>
+        function Skit(a, b) { // constructor function
+            this.skitName = a; // property 'skitName' of the function
+            this.numberOfActors = b;
+            this.dialogue = function () {
+                alert("May the Force be with you.");
+            }
+        }
+        name = prompt("Enter skit name");
+        actors = parseInt(prompt("Enter number of actors"));
+        var x = new Skit(name, actors);
+        alert("Name of skit: " + x.skitName);
+        alert("Number of actors: " + x.numberOfActors);
+        x.dialogue();
+    </script>
+</body>
+
+</html>

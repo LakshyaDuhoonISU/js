@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title>Event 2</title>
+</head>
+
+<body>
+    <script>
+        function fun1() {
+            alert("hello");
+            var btn = event.srcElement;
+            var choice = btn.value;
+            alert(choice);
+            switch (choice) {
+                case '1':
+                    remark = "Below Average";
+                    break;
+                case '2':
+                    remark = "Average";
+                    break;
+                case '3':
+                    remark = "Good";
+                    break;
+                case '4':
+                    remark = "Very Good";
+                    break;
+                case '5':
+                    remark = "Excellent";
+                    break;
+                default:
+                    remark = "No comments";
+            }
+            var x = document.createElement("h1");
+            x.innerHTML = remark;
+            document.body.appendChild(x);
+        }
+    </script>
+    <input type="button" onclick="fun1()" value="1">&nbsp;&nbsp;&nbsp;
+    <input type="button" onclick="fun1()" value="2">&nbsp;&nbsp;&nbsp;
+    <input type="button" onclick="fun1()" value="3">&nbsp;&nbsp;&nbsp;
+    <input type="button" onclick="fun1()" value="4">&nbsp;&nbsp;&nbsp;
+    <input type="button" onclick="fun1()" value="5">
+</body>
+
+</html>

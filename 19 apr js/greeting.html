@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>Greeting</title>
+</head>
+
+<body>
+    <script>
+        var greeting = {}; // object literal, empty object without any properties
+        greeting.from = new Date(2024, 4, 1, 0, 0, 0, 0); // creating a property 'from' of object greeting
+        greeting.to = new Date(2024, 4, 19, 0, 0, 0, 0);
+        greeting.annualDay = function () {
+            alert("There are 19 performances on the annual day");
+        }
+        alert("From: "+greeting.from);
+        alert("To: "+greeting.to);
+        greeting.annualDay();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Event 3</title>
+</head>
+
+<body>
+    <script>
+        function validateFunction() {
+            if (t1.value == "") {
+                alert("hi");
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <form method="get" action="evt1.html" onsubmit="return validateFunction()">
+        Name: <input type="text" value="" id="t1">
+        <hr>
+        <input type="submit" value="submit button">
+        <hr>
+        <input type="button" onclick="validateFunction()" value="button">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <title>Array Functionalities</title>
+</head>
+
+<body>
+    <h1>Quiz</h1>
+    <p id="question"></p>
+    <div id="options"></div>
+    <p id="result"></p>
+    <h2 id="score"></h2>
+    <script>
+        var quiz = [
+            {
+                question: "What is the capital of France?",
+                options: ["Paris", "London", "Berlin", "Rome"],
+                correctAnswer: 0,
+                points: 1
+            },
+            {
+                question: "Who painted the Mona Lisa?",
+                options: ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Michelangelo"],
+                correctAnswer: 0,
+                points: 2
+            },
+            {
+                question: "What is the largest mammal?",
+                options: ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+                correctAnswer: 1,
+                points: 3
+            }
+        ];
+        var score = 0;
+        var currentQuestion = 0;
+        var questionElement = document.getElementById("question");
+        var optionsElement = document.getElementById("options");
+        var scoreElement = document.getElementById("score");
+
+        function displayQuestion() {
+            questionElement.innerHTML = quiz[currentQuestion].question;
+            optionsElement.innerHTML = "";
+            for (let i = 0; i < quiz[currentQuestion].options.length; i++) {
+                var button = document.createElement("button");
+                button.innerHTML = quiz[currentQuestion].options[i];
+                button.onclick = function () {
+                    checkAnswer(i);
+                };
+                optionsElement.appendChild(button);
+            }
+        }
+
+        function checkAnswer(option) {
+            if (option === quiz[currentQuestion].correctAnswer) {
+                score += quiz[currentQuestion].points;
+            }
+            currentQuestion++;
+            if (currentQuestion < quiz.length) {
+                displayQuestion();
+            } else {
+                displayResult();
+            }
+        }
+
+        function displayResult() {
+            questionElement.innerHTML = "";
+            optionsElement.innerHTML = "";
+            scoreElement.innerHTML = "Your Score: " + score;
+        }
+
+        displayQuestion();
+    </script>
+</body>
+
+</html>

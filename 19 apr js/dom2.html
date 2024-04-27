@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Dom</title>
+</head>
+
+<body>
+    <script>
+        function domA() {
+            alert("Dom A");
+            // var x=document.getElementById("t1").getAttribute("value"); // core dom
+            x = t1.value; // HTML dom
+            let y = "color:" + x;
+            alert(y);
+            document.getElementById("t1").setAttribute("style", y);
+        }
+        function domB() {
+            alert("Dom B");
+            x = t1.value; // HTML dom
+            // var y = "color:" + x;
+            // alert(y);
+            document.getElementById("t1").style.backgroundColor = x;
+            document.getElementById("t1").style.fontSize = "7em";
+            document.getElementById("t1").style.width = "50%";
+            document.getElementById("t1").style.borderRadius = "5%";
+            document.getElementById("t1").style.color = "white";
+        }
+        function domC() {
+            alert("Dom C");
+            var myStyle = "background-color:yellow;color:green;font-size:2em;border-radius:5em;";
+            t1.setAttribute("style", myStyle);
+        }
+        function domD() {
+            alert("Dom D");
+            var x = document.createElement("h1");
+            x.innerHTML = "Knowledge with humility is like diamond on gold";
+            document.getElementById("d1").appendChild(x);
+        }
+    </script>
+    <input type="text" value="" id="t1"><br><br>
+    <input type="button" onclick="domA()" value="Dom A"><br><br>
+    <input type="button" onclick="domB()" value="Dom B"><br><br>
+    <input type="button" onclick="domC()" value="Dom C"><br><br>
+    <input type="button" onclick="domD()" value="Dom D"><br>
+    <div id="d1" style="background-color:yellow;width:100%;height:5em;color:red"></div>
+</body>
+
+</html>
