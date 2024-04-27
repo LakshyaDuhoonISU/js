@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>Regular Expressions: Lakshya</title>
+</head>
+
+<body>
+    <script>
+        function reg1() {
+            alert("Regular Expression 1");
+            var x = t1.value;
+            var patt = /\b[ABCD]/i;
+            var cities = ["Ahemdabad", "Pune", "Mumbai", "Bangalore", "Chennai", "Daman", "Pondicherry"];
+            ans = 0;
+            for (ctr = 0; ctr < cities.length; ctr++) {
+                if (patt.test(cities[ctr])) {
+                    ans++;
+                }
+            }
+            document.write("The number of cities found with the pattern is " + ans);
+        }
+        function reg2() {
+            alert("Regular Expression 2");
+            let empid = t1.value;
+            var patt = /E\d{3}/; // patt will check after E if there are 3 digits in empid
+            if (patt.test(empid) && empid.length == 4) { // if patt is present in empid and empid is of length 4
+                document.getElementById("s1").style.color = "green";
+                document.getElementById("s1").innerHTML = "Valid Employee ID";
+            }
+            else {
+                document.getElementById("s1").style.color = "red";
+                document.getElementById("s1").innerHTML = "Invalid Employee ID";
+            }
+        }
+        function reg3() {
+            alert("Regular Expression 3");
+            let x = t1.value;
+            var patt = /mumbai/ig;
+            if (patt.test(x)) {
+                // document.getElementById("t1").style.textTransform = "uppercase";
+                t1.value = x.toUpperCase();
+            }
+        }
+        function reg4() {
+            alert("Regular Expression 4");
+            let x = t1.value;
+            var patt = /tamil nadu/ig;
+            if (patt.test(x)) {
+                t1.value = x.replace(patt, "chennai");
+            }
+        }
+    </script>
+    Enter the text: <input type="text" id="t1"><span id="s1"></span><br>
+    <button onclick="reg1()" style="font-size:2em;">&#128512</button><br>
+    <button onclick="reg2()" style="font-size:2em;">&#128513</button><br>
+    <button onclick="reg3()" style="font-size:2em;">&#128514</button><br>
+    <button onclick="reg4()" style="font-size:2em;">&#128518</button><br>
+</body>
+
+</html>

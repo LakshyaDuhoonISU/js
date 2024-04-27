@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>Form Elements</title>
+</head>
+
+<body>
+    <script>
+        function printName() {
+            alert("Hello " + txt1.value + " " + txt2.value + "\nContact Number: " + txt3.value);
+        }
+    </script>
+    <form onsubmit="printName()">
+        Enter your first name: <input type="text" id="txt1"><br>
+        Enter your last name: <input type="text" id="txt2"><br>
+        Enter your phone number: <input type="tel" id="txt3"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>Functions and Strings</title>
+</head>
+
+<body>
+    <script>
+        function fullName() {
+            var firstName = prompt("Enter first name");
+            var lastName = prompt("Enter last name");
+            var fullname = firstName + " " + lastName;
+            alert("Fullname: " + fullname);
+        }
+        function checkPassword() {
+            var pwd = "123456789"
+            if (t1.value == pwd) {
+                document.getElementById("s1").style.color = "green";
+                document.getElementById("s1").innerHTML = "Correct Password"
+            }
+            else {
+                document.getElementById("s1").style.color = "red";
+                document.getElementById("s1").innerHTML = "Incorrect Password"
+            }
+        }
+    </script>
+    <input type="button" onclick="fullName()" value="Full Name"><br>
+    <hr>
+    <input type="text" id="t1"><span id="s1"></span>
+    <br><br><button onclick="checkPassword()">Check Password</button>
+    <hr>
+</body>
+
+</html>

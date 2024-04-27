@@ -1,0 +1,17 @@
+<html>
+
+<head>
+    <title>Event Bubble</title>
+</head>
+<!-- bubble(goes from down to up) and tunnel(goes from up to down) -->
+
+<body onclick="alert('hello')">
+    <form onclick="alert('hi from form')">
+        <input type="button" value="register" onclick="alert('Namaste from Lakshya')">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <input type="button" value="register" onclick="alert('hi from mumbai');event.cancelBubble=true">
+        <!-- cancelBubble will cancel the other alerts  -->
+    </form>
+</body>
+
+</html>

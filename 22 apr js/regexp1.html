@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title>RegExp</title>
+</head>
+
+<body>
+    <script>
+        var patt = new RegExp("email", "ig"); // i - case insensitive, g - global search
+        var str = "Small EMAILS";
+        document.write(str.search(patt)); // patt will search for "email" in the string and will search the entire string and not stop at the first match and return the index of the first match
+        document.write("<hr>");
+        document.write(str.replace(patt, "letters")); // patt will replace the "email" present in the string with "letters"
+        document.write("<hr>");
+        var patt1 = /email/ig; // literal regexp definition which will search for "email" in the string
+        var str = "email EMAILS";
+        document.write(str.replace(patt1, "letters")); // patt will replace the "email" present in the string with "letters"
+        document.write("<hr>");
+        document.write(patt1.exec(str)); // if pattern is found, it will return patt1 value, else it will return null
+        document.write("<hr>");
+        document.write(patt1.test(str)); // will return boolean value depending on whether the pattern is found in the string or not
+    </script>
+</body>
+
+</html>

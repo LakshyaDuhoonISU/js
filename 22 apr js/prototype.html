@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Prototype</title>
+    <script language="javascript">
+        function person() {
+            this.firstName = "anish";
+            this.lastName = "m";
+        }
+        x = new person();
+        y = x;
+        z = new person();
+        alert(x.firstName);
+        alert(y.firstName);
+        alert(z.firstName);
+
+        person.prototype.salary = 50000; // classname.prototype.property is used to add property to a class which is given to all the objects of that class
+
+        alert("x: " + x.salary);
+        alert("y: " + y.salary);
+        alert("z: " + z.salary);
+
+        x.tax = 2000;
+
+        alert("x: " + x.tax);
+        alert("y: " + y.tax);
+        alert("z: " + z.tax); // undefined as tax is only given to x and y but not to z
+    </script>
+</head>
+
+</html>

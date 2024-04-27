@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Key Events</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function textsizer(e) { // e = event object
+            alert("hi");
+            var evtobj = window.event ? window.event : e; // if browser doesn't support window.event, evtobj has e
+            alert(evtobj);
+            var unicode = evtobj.charCode ? evtobj.charCode : evtobj.keyCode; // if browser doesn't support charCode, unicode has keyCode
+            alert(unicode);
+            var actualkey = String.fromCharCode(unicode); // fromCharCode converts unicode value to the alphabet it represents
+            alert(actualkey);
+            if (actualkey == "a") {
+                document.body.style.fontSize = "5em";
+            }
+            if (actualkey == "z") {
+                document.body.style.fontSize = "2em";
+            }
+        }
+        document.onkeypress = textsizer; // when a key is pressed, the function is called
+    </script>
+    <form></form>Institute of Technology and Management
+</body>
+
+</html>

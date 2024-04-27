@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <title>Greet Event 1</title>
+</head>
+
+<body>
+    <script>
+        function hello() {
+            alert("I greet everyone with a hello message");
+        }
+        window.onload = function () { // as defining the function before the creation of the button gives error, in order to run the function after the dom(document) is loaded, we need to write window.onload function to avoid any error(it is an anonymous function)
+            b1.onclick = hello; // obj.onevent=function
+        }
+    </script>
+    <input type="button" id="b1" value="hello">
+</body>
+
+</html>
