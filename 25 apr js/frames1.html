@@ -1,0 +1,18 @@
+<html>
+
+<head>
+    <title>Frames in HTML</title>
+</head>
+
+<body>
+    <script>
+        function fun1() {
+            alert("hi");
+            document.getElementById("f1").setAttribute("src", "green.html");
+        }
+    </script>
+    <iframe id="f1" src="blue.html"></iframe>
+    <input type="button" onclick="fun1()" value="fun1">
+</body>
+
+</html>

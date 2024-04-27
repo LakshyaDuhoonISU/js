@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>Fetch API</title>
+</head>
+
+<body>
+    <script>
+        async function getData() {
+            const response = await fetch('http://127.0.0.1:8080');
+            const jsonData = await response.json();
+            alert(jsonData);
+        }
+        async function postdata() {
+            alert("data posted");
+        }
+        async function putdata() {
+            alert("data updated");
+        }
+        async function deletedata() {
+            alert("data deleted");
+        }
+    </script>
+    <input type="button" value="get" onclick="getData();"><br>
+    <input type="button" value="post" onclick="postdata();"><br>
+    <input type="button" value="put" onclick="putdata();"><br>
+    <input type="button" value="delete" onclick="deletedata();"><br>
+</body>
+
+</html>

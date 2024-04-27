@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <title>Cookie</title>
+</head>
+
+<body>
+    <script>
+        function fun1() {
+            document.cookie = "fname=Lakshya, expires=Thu, 02 May 2024 11:00:00 UTC";
+            alert(document.cookie.length);
+            document.getElementById("d1").innerHTML = document.cookie;
+        }
+    </script>
+    <input type="button" onclick="fun1()" value="display cookie">
+    <div id="d1"></div>
+</body>
+
+</html>
