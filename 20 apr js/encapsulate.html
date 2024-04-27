@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>Encapsulate</title>
+</head>
+
+<body>
+    <script>
+        class Encapsulate {
+            constructor() {
+                this.firstName = "Lakshya"; // public property as 'this' is used
+                var lastName = "Duhoon"; // private property as 'var' or 'let' is used, hence can't be accessed by object
+            }
+        }
+        var obj = new Encapsulate();
+        alert(obj.firstName);
+        alert(obj.lastName);
+    </script>
+</body>
+
+</html>

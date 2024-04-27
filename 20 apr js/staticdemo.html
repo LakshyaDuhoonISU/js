@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title>Static Demo</title>
+</head>
+
+<body>
+    <script>
+        class mobileApp {
+            constructor(a) {
+                this.appName = a;
+            }
+            static appFeatures() {
+                alert("Mobile Features");
+            }
+        }
+        var obj = new mobileApp("Smartphone");
+        mobileApp.appFeatures();
+        alert("Static demo");
+        obj.appFeatures(); // error because static methods cannot be invoked using objects, can only be invoked using class
+    </script>
+    <p id="p1">Output</p>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>Inheritance</title>
+</head>
+
+<body>
+    <script>
+        class BasicPhone { // parent class
+            calling() {
+                alert("Simple calling");
+            }
+        }
+        class SmartPhone extends BasicPhone { // child class(inherits BasicPhone class)
+            camera() {
+                alert("I make images");
+            }
+        }
+        var obj1 = new BasicPhone();
+        var obj2 = new SmartPhone();
+        obj1.calling();
+        obj2.calling(); // as obj2 is an object of SmartPhone class, it inherits calling() function from BasicPhone class
+        obj2.camera();
+    </script>
+</body>
+
+</html>

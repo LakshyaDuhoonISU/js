@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title>Global and Local Variables in JavaScript</title>
+</head>
+
+<body>
+    <script>
+        var g1 = "Hello"; // g1 is a global variable as it is initialised outside any function at script level
+        function hello() {
+            g2 = "Namaste"; // g2 is a global variable as it is initialised without any var or let
+        }
+        function greet() {
+            alert(g1);
+            alert(g2);
+        }
+    </script>
+    <input type="button" onclick="hello()" value="hello">
+    <!-- on clicking this button, hello() function is called and g2 is initialised -->
+    <input type="button" onclick="greet()" value="greet">
+</body>
+
+</html>

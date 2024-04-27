@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Enumeration</title>
+</head>
+
+<body>
+    <script>
+        function fun1() {
+            alert("Enumeration in JavaScript");
+            var SIZE = { // enumerate
+                SMALL: { value: 0, name: "Small", code: "X" },
+                MEDIUM: { value: 1, name: "Medium", code: "XL" },
+                LARGE: { value: 2, name: "Large", code: "XXL" }
+            };
+            var bagsize = SIZE.MEDIUM;
+            if (bagsize == SIZE.MEDIUM) {
+                alert(bagsize.value + " : " + bagsize.name);
+            }
+        }
+    </script>
+    <h1>Enumeration</h1>
+    <input type="button" onclick="fun1()" value="Enumeration">
+</body>
+
+</html>

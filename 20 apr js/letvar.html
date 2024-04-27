@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Let variable(block scope)</title>
+</head>
+
+<body>
+    <script>
+        function fun1() {
+            alert("Hi from fun1");
+            {
+                var ans = 99; // ans will be visible as it is in function level
+            }
+            alert(ans);
+            alert("Bye from fun1");
+        }
+        function fun2() {
+            alert("Namaste from fun2");
+            {
+                let result = 97; // result will not be visible as it is in block level
+            }
+            alert(result);
+            alert("Bye from fun2");
+        }
+    </script>
+    <button onclick="fun1()">var keyword</button>
+    <hr>
+    <button onclick="fun2()">let keyword</button>
+</body>
+
+</html>
