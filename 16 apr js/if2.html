@@ -1,0 +1,22 @@
+<html>
+
+<body>
+    <p>Grade <input type="text" id="g1" disabled></p>
+    <script>
+        var marks = parseInt(prompt("Enter the marks"));
+        var grade = "";
+        if (marks >= 80)
+            grade = "A grade";
+        else
+            if (marks >= 60)
+                grade = "B grade";
+            else
+                if (marks >= 40)
+                    grade = "C grade";
+                else
+                    grade = "fail";
+        g1.value = grade;
+    </script>
+</body>
+
+</html>

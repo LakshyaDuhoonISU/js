@@ -1,0 +1,72 @@
+<html>
+
+<body>
+    <script>
+        function fun1() {
+            alert("Switch case");
+            var score = parseInt(prompt("Enter feedback score"));
+            var remarks;
+            switch (score) {
+                case 1:
+                    remarks = "Below Average";
+                    break;
+                case 2:
+                    remarks = "Average";
+                    break;
+                case 3:
+                    remarks = "Good";
+                    break;
+                case 4:
+                    remarks = "Very Good";
+                    break;
+                case 5:
+                    remarks = "Excellent";
+                    break;
+                default:
+                    remarks = "Invalid score";
+            }
+            alert(remarks);
+        }
+        function fun2() {
+            alert("For loop");
+            for (let j = 1, score = 90; j <= 10; j++, score -= 10) {
+                console.log("Lakshya " + j);
+                console.log("My score is " + score);
+                console.log("*******************");
+            }
+        }
+        function fun3() {
+            alert("Do while loop");
+            var ctr = 0;
+            do {
+                document.write("Code<br>");
+                document.write("Eat<br>");
+                document.write("Sleep<br><hr>");
+                ctr++;
+            } while (ctr < 5);
+        }
+        function fun4() {
+            alert("While loop");
+            let ctr = 10;
+            while (ctr >= -5) {
+                document.write("Lakshya " + ctr + "<br>");
+                ctr -= 2;
+            }
+        }
+        function fun5() {
+            alert("For each loop");
+        }
+    </script>
+    <input type="button" onclick="fun1()" value="switch case">
+    <br>
+    <input type="button" onclick="fun2()" value="for loop">
+    <br>
+    <input type="button" onclick="fun3()" value="do while loop">
+    <br>
+    <input type="button" onclick="fun4()" value="while loop">
+    <br>
+    <input type="button" onclick="fun5()" value="for each loop">
+    <br>
+</body>
+
+</html>
