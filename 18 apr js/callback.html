@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <title>Function as an argument</title>
+</head>
+
+<body>
+    <script>
+        function add(num1, num2, fn) {
+            var ans = num1 + num2;
+            fn(ans); // fn will store the function which will be passed to it during function call
+        }
+        function fun1() {
+            add(12, 13, function (a) {
+                alert("The answer is " + a); // function(a) is the function which will be passed to fn in add function
+            }); // function can be passed as a argument to a function in js
+        }
+        fun1();
+    </script>
+</body>
+
+</html>

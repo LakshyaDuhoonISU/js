@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <title>Experiment 2</title>
+    <style>
+        input {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body style="text-align: center;background-color: aqua;">
+    <script>
+        function negativePositive() {
+            num1 = parseInt(prompt("Enter a number to check whether it is negative or positive"));
+            if (num1 > 0) {
+                alert(num1 + " is a positive number");
+            } else if (num1 < 0) {
+                alert(num1 + " is a negative number");
+            }
+            else {
+                alert(num1 + " is zero");
+            }
+        }
+        function oddEven() {
+            num1 = parseInt(prompt("Enter a number to check whether it is odd or even"));
+            var ans = num1 % 2 == 0;
+            switch (ans) {
+                case false:
+                    alert(num1 + " is an odd number");
+                    break;
+                case true:
+                    alert(num1 + " is an even number");
+                    break;
+                default:
+                    alert("Invalid number");
+            }
+        }
+        function sumArray() {
+            var num1 = prompt("Enter the size of array");
+            var sum = 0;
+            var arr = [];
+            let i = 0;
+            while (i < num1) {
+                arr[i] = parseInt(prompt("Enter the element"));
+                sum += arr[i];
+                i++;
+            }
+            alert("Sum of elements of array: " + sum);
+        }
+        function perfectNumber() {
+            var num1 = parseInt(prompt("Enter a number to check whether it is a perfect number"));
+            var sum = 0;
+            for (let i = 1; i < num1; i++) {
+                if (num1 % i == 0) {
+                    sum += i;
+                }
+            }
+            if (sum == num1) {
+                alert(num1 + " is a perfect number");
+            }
+            else {
+                alert(num1 + " is not a perfect number");
+            }
+        }
+        function uglyNumber() {
+            num = parseInt(prompt("Enter number to check whether it is an ugly number"));
+            if (num <= 0) {
+                alert("Number is not an ugly number");
+            }
+            do {
+                if (num % 2 === 0) {
+                    num /= 2;
+                } else if (num % 3 === 0) {
+                    num /= 3;
+                } else if (num % 5 === 0) {
+                    num /= 5;
+                } else {
+                    alert("Number is not an ugly number");
+                    return false;
+                    break;
+                }
+            } while (num > 1);
+            alert("Number is an ugly number");
+        }   
+    </script>
+    <input type="button" value="Check for Negative or Positive Number" onclick="negativePositive();">
+    <input type="button" value="Check for Odd or Even Number" onclick="oddEven();">
+    <input type="button" value="Sum of elements of array" onclick="sumArray();">
+    <input type="button" value="Check for Perfect Number" onclick="perfectNumber();">
+    <input type="button" value="Check for Ugly Number" onclick="uglyNumber();">
+</body>
+
+</html>

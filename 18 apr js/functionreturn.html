@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <title>Function that returns a function</title>
+</head>
+
+<body>
+    <script>
+        function data(num1, num2) {
+            alert(num1);
+            alert(num2);
+            return (function () {
+                alert("We will perform calculations on " + num1 + " and " + num2);
+            });
+        } // how to print only the anonymous function without removing the two alerts?
+    </script>
+    <input type="button" onclick="data(12,24)()" value="return">
+</body>
+
+</html>

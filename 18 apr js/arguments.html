@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title>Arguments Length</title>
+    <style>
+        input {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function add() {
+            alert("Hello " + arguments.length); // arguments.length returns the number of arguments being passed to the function
+            alert(arguments[0]);
+            alert(arguments[5]); // arguments[i] returns the i-th argument from the arguments being passed, if argument not available, it prints undefined
+        }
+    </script>
+    <input type="button" onclick="add(12,14)" value="add1"><br>
+    <input type="button" onclick="add(95,45,85)" value="add2">
+</body>
+
+</html>

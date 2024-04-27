@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <title>UPI Payment Simulation</title>
+</head>
+
+<body>
+    <script>
+        function upi(Mfrom, Mto, amount, fun1) {
+            if (Mfrom == null || Mto == null || amount == null || amount <= 0) {
+                fun1("Error");
+            }
+            else {
+                fun1("Success");
+            }
+        }
+        function bhimUpi(m1, m2, amt) {
+            upi(m1, m2, amt, function (a) {
+                if (a.toLowerCase() == "error") {
+                    document.write("<p style='color:red;'>Error</p>");
+                }
+                else if (a.toLowerCase() == "success") {
+                    document.write("<p style='color:green;'>Payment Done</p>");
+                }
+                else {
+                    document.write("Unknown");
+                }
+            });
+        }
+        function gPay(m1, m2, amt) {
+            upi(m1, m2, amt, function (a) {
+                if (a.toLowerCase() == "error") {
+                    document.write("<p style='color:red;'>&#8377 " + amt + " Not Paid</p>");
+                    document.write("<img src='https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs42979-021-00978-x/MediaObjects/42979_2021_978_Fig8_HTML.png'; alt='fail_img';width=1em;height=1em;>");
+                }
+                else if (a.toLowerCase() == "success") {
+                    document.write("<p style='color:green;'>&#8377 " + amt + " Paid</p>");
+                    document.write("<img src='https://zeuxinnovation.com/wp-content/uploads/2023/04/maximising-user-satisfaction-1.jpg'; alt='success_img'; width=1350px;height=1550px;>");
+                }
+                else {
+                    document.write("Unknown");
+                }
+            });
+        }
+        function phonePe(m1, m2, amt) {
+            upi(m1, m2, amt, function (a) {
+                if (a.toLowerCase() == "error") {
+                    document.write("<p style='color:red;'>&#8377 " + amt + " Not Paid</p>");
+                    document.write("<img src='https://cdn0.opinion-corp.com/review-media/pictures/2024/02/21/phonepe_payment-failed-202402215640323_8db7-gallery.png' alt='phonepe_success'>");
+                }
+                else if (a.toLowerCase() == "success") {
+                    document.write("<p style='color:green;'>&#8377 " + amt + " Paid</p>");
+                    document.write("<img src='https://www.phonepe.com/_gatsby/image/787667c8ea73b8af4719ce0e86d2f77c/9696325b670d02a5ea510e0156f9f412/Step-4.png?u=https%3A%2F%2Fwordpress-cms.phonepe.com%2Fphonepe-website%2Fwp-content%2Fuploads%2Fsites%2F16%2F2023%2F05%2FStep-4.png&a=w%3D128%26h%3D256%26fm%3Dpng%26q%3D70&cd=2023-05-08T10%3A23%3A31' alt='phonepe_error'>");
+                }
+                else {
+                    document.write("Unknown");
+                }
+            });
+        }
+    </script>
+    BhimUPI -&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="error" onclick="bhimUpi(null,null,9000)">
+    <input type="button" value="success" onclick="bhimUpi(901124789,2294227891,20000)"><br><br><br>
+    GPay -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="error" onclick="gPay(null,null,9000)">
+    <input type="button" value="success" onclick="gPay(901124789,2294227891,20000)"><br><br><br>
+    PhonePe -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="error" onclick="phonePe(null,null,9000)">
+    <input type="button" value="success" onclick="phonePe(901124789,2294227891,20000)">
+</body>
+
+</html>

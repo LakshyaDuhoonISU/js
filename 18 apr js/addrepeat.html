@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>Different types of functions</title>
+    <style>
+        input {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function add(num1, num2) {
+            alert("abcd");
+        }
+        function add(num1, num2, num3) {
+            alert("xyz");
+        }
+        function add(num1, num2, num3, num4) {
+            alert("bonjour");
+        }
+        function add(num1) {
+            alert("namaste");
+        }
+        function add(num1) { // as js is a dynamically typed language the latest function definition will be considered and all other function definitions will be overriden
+            alert("hola");
+        }
+    </script>
+    <input type="button" onclick="add(12,34)" value="add1"><br>
+    <input type="button" onclick="add(12,34,23)" value="add2"><br>
+    <input type="button" onclick="add(12,34,23,45)" value="add3"><br>
+    <input type="button" onclick="add(12)" value="add4"><br>
+    <input type="button" onclick="add(12)" value="add5">
+</body>
+
+</html>
